@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Retro Pink Game Page</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <button id="first-btn" class="pixel-btn">Klik di sini</button>
+  </div>
+
+  <script>
+    const container = document.querySelector('.container');
+    const firstBtn = document.getElementById('first-btn');
+
+    // Klik tombol pertama → ganti tombol baru
+    firstBtn.addEventListener('click', () => {
+      firstBtn.remove();
+      const secondBtn = document.createElement('button');
+      secondBtn.className = 'pixel-btn';
+      secondBtn.textContent = "Who’s Andang fall into?";
+      container.appendChild(secondBtn);
+
+      // Klik tombol kedua → tampilkan nama
+      secondBtn.addEventListener('click', () => {
+        secondBtn.remove();
+        const nameText = document.createElement('h1');
+        nameText.textContent = "Andi Kaila Salsabila 💖";
+        nameText.className = "name-animate";
+        container.appendChild(nameText);
+      });
+    });
+  </script>
+</body>
+</html>
